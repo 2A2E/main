@@ -10,7 +10,31 @@ def root():
 @app.get("/adam")
 @app.get("/adam/")
 def adam():
-    return "Hi, this is Adam’s first HTTP API!"
+    return "Hi, this is Adam's first HTTP API!"
+
+# second API created by Chenrui
+@app.get("/api/status")
+@app.get("/api/status/")
+def api_status():
+    import datetime
+    import platform
+    import sys
+    
+    status_info = {
+        "status": "healthy",
+        "timestamp": datetime.datetime.now().isoformat(),
+        "server_info": {
+            "platform": platform.system(),
+            "python_version": sys.version.split()[0],
+            "flask_version": "3.1.2"
+        },
+        "endpoints": [
+            "/",
+            "/adam",
+            "/api/status"
+        ]
+    }
+    return status_info
 
 
 if __name__ == "__main__":
