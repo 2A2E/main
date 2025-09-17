@@ -13,5 +13,6 @@ if __name__ == "__main__":
 
 # APIs
 @app.get("/adam")
+@app.get("/adam/")
 def adam():
     return "Hi, this is Adam’s first HTTP API!"
