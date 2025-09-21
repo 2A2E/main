@@ -31,11 +31,16 @@ def api_status():
         "endpoints": [
             "/",
             "/adam",
+            "/aaron",
             "/api/status"
         ]
     }
     return status_info
 
+@app.get("/aaron")
+@app.get("/aaron/")
+def aaron():
+    return "Added another endpoint so I can make a commit"
 
 if __name__ == "__main__":
     # listen on all interfaces so the port can be forwarded
